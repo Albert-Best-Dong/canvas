@@ -12,11 +12,13 @@
 <body>
 <header>
     <div class="container">
+        <c:forEach items="${categoryList}" var="category">
         <nav>
-            <a href="#">分类一</a>
+            <a href="#">${category.name}</a>
         </nav>
+        </c:forEach>
         <nav>
-            <a href="#">分类</a>
+            <a href="/admin/Canvas/list.do">分类</a>
         </nav>
         <nav>
             <a href="#">登录</a>

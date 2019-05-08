@@ -10,22 +10,22 @@ import java.util.List;
 public class CanvasBizImpl implements CanvasBiz {
     private CanvasDao canvasDao = DaoFactory.getInstence().getDao(CanvasDao.class);
     public void add(Canvas canvas) {
-
+        canvasDao.insert(canvas);
     }
 
     public void edit(Canvas canvas) {
-
+        canvasDao.update(canvas);
     }
 
     public void remove(int id) {
-
+        canvasDao.delete(id);
     }
 
     public Canvas get(int id) {
-        return null;
+        return canvasDao.select(id);
     }
 
     public List<Canvas> getAll() {
-        return null;
+        return canvasDao.selectAll();
     }
 }

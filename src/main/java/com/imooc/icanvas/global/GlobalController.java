@@ -17,8 +17,8 @@ public class GlobalController extends GenericServlet {
         /*
         .do
         /login.do           DefaultController   login
-        /Cake/detail.do     CakeController      detail
-        /admin/Cake/add.do  CakeController      add
+        /Canvas/detail.do     CanvasController      detail
+        /admin/Canvas/add.do  CanvasController      add
          */
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse)servletResponse;
@@ -30,8 +30,8 @@ public class GlobalController extends GenericServlet {
         }
         /*
         login.do           DefaultController   login
-        Cake/detail.do     CakeController      detail
-        Cake/add.do  CakeController      add
+        Canvas/detail.do     CanvasController      detail
+        Canvas/add.do  CanvasController      add
          */
         int index = path.indexOf("/");
         String className =null;

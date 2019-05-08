@@ -9,7 +9,7 @@ import java.util.Date;
 */
 public class Canvas {
     private int id;
-    private String categoryId;
+    private int categoryId;
     private String name;
     private String creator;
     private int price;
@@ -19,6 +19,12 @@ public class Canvas {
     private String description;
     private String details;
 
+    private Category category;
+
+
+    public Canvas() {
+    }
+
     public int getId() {
         return id;
     }
@@ -27,11 +33,11 @@ public class Canvas {
         this.id = id;
     }
 
-    public String getCategoryId() {
+    public int getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(String categoryId) {
+    public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
     }
 
@@ -97,5 +103,13 @@ public class Canvas {
 
     public void setDetails(String details) {
         this.details = details;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
