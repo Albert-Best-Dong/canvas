@@ -1,19 +1,40 @@
 package com.imooc.icanvas.entity;
 
 import java.util.Date;
+
 /**
-*   分类实体
-*   @author albert
-*   @date 2019/5/7
-*
-*/
+ * 分类实体
+ *
+ * @author albert
+ * @date 2019/5/7
+ */
 public class Category {
     private int id;
-    private String name;
-    private String createName;
-    private Date createTime;
-    private Date updateTime;
-    private String description;
+    private String name;            //名称
+    private String createName;      //创建名称
+    private Date createTime;        //创建时间
+    private Date updateTime;        //最后修改你时间
+    private String description;     //描述
+
+    private Category category;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Category() {
+    }
+
+    public Category(int id, String name, Date updateTime, String description) {
+        this.id = id;
+        this.name = name;
+        this.updateTime = updateTime;
+        this.description = description;
+    }
 
     public int getId() {
         return id;
