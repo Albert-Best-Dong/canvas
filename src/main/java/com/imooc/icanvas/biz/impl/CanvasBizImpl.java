@@ -28,4 +28,12 @@ public class CanvasBizImpl implements CanvasBiz {
     public List<Canvas> getAll() {
         return canvasDao.selectAll();
     }
+
+    public List<Canvas> getForCategory(int cid) {
+        return canvasDao.selectByCid(cid);
+    }
+
+    public List<Canvas> getForIndex() {
+        return null;
+    }
 }

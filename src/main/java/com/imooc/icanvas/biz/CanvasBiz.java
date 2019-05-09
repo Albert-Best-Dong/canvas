@@ -14,4 +14,8 @@ public interface CanvasBiz {
     Canvas get(int id);
 
     List<Canvas> getAll();
+
+    List<Canvas> getForCategory(int cid);
+
+    List<Canvas> getForIndex();
 }

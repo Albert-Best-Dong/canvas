@@ -37,7 +37,7 @@ public interface CanvasDao {
     @ResultMap("all")
     List<Canvas> selectAll();
 
-    @Select("")
+    @Select("select c.*,ca.name cname from canvas c left join category ca on c.categoryId=ca.id where c.categoryId=#{cid}")
     @ResultMap("all")
     List<Canvas> selectByCid(int cid);
 }

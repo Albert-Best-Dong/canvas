@@ -2,6 +2,7 @@ package com.imooc.icanvas.controller;
 
 import com.imooc.icanvas.biz.CategoryBiz;
 import com.imooc.icanvas.biz.impl.CategoryBizImpl;
+import com.imooc.icanvas.entity.Account;
 import com.imooc.icanvas.entity.Category;
 
 import javax.servlet.ServletException;
@@ -13,11 +14,12 @@ import java.util.List;
 
 public class CategoryController {
     private CategoryBiz categoryBiz = new CategoryBizImpl();
+
     // /admin/Category/list.do
     public void list(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Category> list = categoryBiz.getAll();
-        System.out.println(list);
-        request.setAttribute("categoryList", list);
+        List<Category> categoryList = categoryBiz.getAll();
+
+        request.getServletContext().setAttribute("categoryList", categoryList);
         request.getRequestDispatcher("/WEB-INF/pages/admin/category_list.jsp").forward(request, response);
     }
     // /admin/Category/toAdd.do
@@ -28,6 +30,8 @@ public class CategoryController {
     }
     // /admin/Category/add.do
     public void add(HttpServletRequest request, HttpServletResponse response) throws  IOException {
+
+
         String name = request.getParameter("name");
         String createName = request.getParameter("createname");
         Date createTime = new Date();
@@ -39,7 +43,7 @@ public class CategoryController {
         category.setCreateTime(createTime);
         category.setUpdateTime(updateTime);
         category.setDescription(description);
-        System.out.println(category);
+
         categoryBiz.add(category);
 
         response.sendRedirect("list.do");

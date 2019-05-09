@@ -23,19 +23,15 @@ import java.util.List;
 
 public class CanvasController {
     private CanvasBiz canvasBiz = new CanvasBizImpl();
-    private CategoryBiz categoryBiz = new CategoryBizImpl();
 
     public void list(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Canvas> list = canvasBiz.getAll();
-        List<Category> categoryList = categoryBiz.getAll();
-        request.setAttribute("categoryList", categoryList);
+
         request.setAttribute("canvasList", list);
         request.getRequestDispatcher("/WEB-INF/pages/admin/canvas_list.jsp").forward(request, response);
     }
 
     public void toAdd(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Category> categoryList = categoryBiz.getAll();
-        request.setAttribute("categoryList", categoryList);
 
         request.getRequestDispatcher("/WEB-INF/pages/admin/add_canvas.jsp").forward(request, response);
     }
@@ -51,8 +47,6 @@ public class CanvasController {
     public void toEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         Canvas canvas = canvasBiz.get(id);
-        List<Category> categoryList = categoryBiz.getAll();
-        request.setAttribute("categoryList", categoryList);
         request.setAttribute("canvas", canvas);
         request.getRequestDispatcher("/WEB-INF/pages/admin/update_canvas.jsp").forward(request, response);
     }
@@ -82,6 +76,9 @@ public class CanvasController {
                     canvas.setCategoryId(Integer.parseInt(item.getString("UTF-8")));
                 if (item.getFieldName().equals("name"))
                     canvas.setName(item.getString("UTF-8"));
+
+                if (item.getFieldName().equals("creator"))
+                    canvas.setCreator(item.getString("UTF-8"));
 
                 if (item.getFieldName().equals("creator"))
                     canvas.setCreator(item.getString("UTF-8"));

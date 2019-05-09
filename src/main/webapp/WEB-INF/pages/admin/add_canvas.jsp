@@ -33,6 +33,7 @@
             <label for="name" class="col-sm-2 control-label">名称 ：</label>
             <div class="col-sm-8">
                 <input name="name" class="form-control" id="name">
+                <input type="hidden" id="creator" name="creator" value="${ACCOUNT.name}">
             </div>
         </div>
         <div class="form-group">

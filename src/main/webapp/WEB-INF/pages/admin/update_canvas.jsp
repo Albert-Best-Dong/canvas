@@ -34,7 +34,7 @@
             <div class="col-sm-8">
                 <input name="name" class="form-control" id="name" value="${canvas.name}">
                 <input type="hidden" name="id" class="form-control" id="id" value="${canvas.id}">
-
+                <input type="hidden" id="creator" name="creator" value="${ACCOUNT.name}">
             </div>
         </div>
         <div class="form-group">
