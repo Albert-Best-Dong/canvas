@@ -18,10 +18,10 @@
         </nav>
         </c:forEach>
         <nav>
-            <a href="#" >分类</a>
+            <a href="/admin/Category/list.do" >分类</a>
         </nav>
         <nav>
-            <a href="#">登录</a>
+            <a href="#">${ACCOUNT.name}</a>
             <a href="#" onclick="alert('功能暂未开放');">注册</a>
         </nav>
     </div>

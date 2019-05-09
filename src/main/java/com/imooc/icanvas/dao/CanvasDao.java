@@ -11,8 +11,7 @@ public interface CanvasDao {
     @Options(useGeneratedKeys = true, keyProperty = "id")
     void insert(Canvas canvas);
 
-    @Update("update canvas set categoryId=#{categoryId},name=#{name},creator=#{creator},price=#{price},smallImg=#{smallImg}," +
-            "createTime=#{createTime},updateTime=#{updateTime},description=#{description},details=#{details} where id = #{id}")
+    @UpdateProvider(type = CanvasProvider.class, method = "updateSQL")
     void update(Canvas canvas);
 
     @Delete("delete from canvas where id = #{id}")
@@ -30,7 +29,7 @@ public interface CanvasDao {
             @Result(column = "updateTime", property = "updateTime"),
             @Result(column = "description", property = "description"),
             @Result(column = "details", property = "details"),
-            @Result(column = "cid",property = "category.id")
+            @Result(column = "cid", property = "category.id")
     })
     Canvas select(int id);
 

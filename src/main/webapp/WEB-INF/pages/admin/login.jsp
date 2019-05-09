@@ -10,11 +10,11 @@
 <div class="login">
     <div class="header">
         <h1>
-            <a href="#">登录</a>
+            <a href="/toLogin.do">登录</a>
         </h1>
         <button></button>
     </div>
-    <form action="#" method="post">
+    <form action="/login.do" method="post">
         <div class="name">
             <input type="text" id="name" name="username">
             <p></p>

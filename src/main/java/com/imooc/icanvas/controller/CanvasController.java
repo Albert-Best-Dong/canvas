@@ -59,6 +59,7 @@ public class CanvasController {
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws IOException, FileUploadException {
         Canvas canvas = builderCanvas(request);
+        canvas.setCreateTime(null);
         canvasBiz.edit(canvas);
 
         response.sendRedirect("list.do");
@@ -87,7 +88,6 @@ public class CanvasController {
 
                 if (item.getFieldName().equals("price"))
                     canvas.setPrice(Integer.parseInt(item.getString("UTF-8")));
-
 
                 if (item.getFieldName().equals("description"))
                     canvas.setDescription(item.getString("UTF-8"));

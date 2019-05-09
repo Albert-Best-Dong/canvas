@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -33,6 +34,7 @@
             <div class="col-sm-8">
                 <input name="name" class="form-control" id="name" value="${canvas.name}">
                 <input type="hidden" name="id" class="form-control" id="id" value="${canvas.id}">
+
             </div>
         </div>
         <div class="form-group">
@@ -46,7 +48,7 @@
         <div class="form-group">
             <label for="price" class="col-sm-2 control-label">价格 ：</label>
             <div class="col-sm-8">
-                <input name="price" type="number" class="form-control" id="price" value="5800">
+                <input name="price" type="number" class="form-control" id="price" value="${canvas.price}">
             </div>
         </div>
         <div class="form-group">

@@ -36,7 +36,7 @@
             <label for="name" class="col-sm-2 control-label">描述 ：</label>
             <div class="col-sm-8">
                 <input type="text" name="description" class="form-control" id="description">
-                <input type="hidden" id="createname" name="createname" value="#">
+                <input type="hidden" id="createname" name="createname" value="${ACCOUNT.name}">
             </div>
         </div>
         <div class="form-group">
